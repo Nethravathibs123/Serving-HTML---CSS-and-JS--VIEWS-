@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/contact.css"> <!-- Link to the new CSS file -->
+</head>
+<body>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list">
+                <li class="main-header__item"><a href="/">Home</a></li>
+                <li class="main-header__item"><a href="/courses">Courses</a></li>
+                <li class="main-header__item"><a href="/hire">Hire With Us</a></li>
+                <li class="main-header__item"><a href="/pricing">Pricing</a></li>
+                <li class="main-header__item"><a class="active" href="/contact">Contact Us</a></li>
+                <li class="main-header__item"><a href="/register" class="button">Register Now</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+       
+        <form class="contact-form" action="/contactus" method="POST">
+            <table>
+                <tr>
+                    <h1>Book a Call</h1>
+                    <p>Book a call slot and our representatives will call you within 1hr of the selected time slot.</p>
+                    <hr>
+        
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" name="name" id="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" name="email" id="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone:</label></td>
+                    <td><input type="tel" name="phone" id="phone" required></td>
+                </tr>
+                <tr>
+                    <td><label for="date">Date:</label></td>
+                    <td><input type="date" name="date" id="date" required></td>
+                    <td><label for="time">Time:</label></td>
+                    <td><input type="time" name="time" id="time" required></td>
+                </tr>
+            </table>
+            <button type="submit" class="get-call-button">Get a Call</button>
+        </form>
+    </main>
+</body>
+</html>

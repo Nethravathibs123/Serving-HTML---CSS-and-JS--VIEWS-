@@ -44,3 +44,18 @@ main {
 .main-header__item a.active {
     color: #3e00a1;
 }
+
+button {
+    font: inherit;
+    border: 1px solid brown; /* Set the border color */
+    color: white;            /* Text color */
+    background: brown;      /* Button background color */
+    border-radius: 3px;     /* Rounded corners */
+    cursor: pointer;
+    padding: 0.5rem 1rem;   /* Padding for the button */
+}
+
+button:hover,
+button:active {
+    background-color: #6b3e00; /* Darker shade on hover */
+}

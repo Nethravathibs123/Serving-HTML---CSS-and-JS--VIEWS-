@@ -1,22 +1,30 @@
-const express = require('express');
 const path = require('path');
+const express = require('express');
 const rootDir = require('../util/path');
 
 const router = express.Router();
 
 // GET request to render the Contact Us page
-router.get('/contact', (req, res, next) => {
-    res.sendFile(path.join(rootDir, 'views', 'contact.html'));
-});
+router.get('/contact', (req, res) => {
+  res.sendFile(path.join(rootDir, 'views', 'contactus.html'));
+}); // Ensure the path is correct
+
+
 
 // POST request to handle form submission from Contact Us page
 router.post('/contactus', (req, res, next) => {
-    const { name, email, phone, message } = req.body; // Destructure the request body
-    console.log(`Contact Form Submitted - Name: ${name}, Email: ${email}, Phone: ${phone}, Message: ${message}`);
+    const name = req.body.name;
+    const email = req.body.email;
+    const phone = req.body.phone;
+    const time = req.body.time;
 
-    // Handle the form submission logic here, such as saving to a database or sending an email
+    console.log(`Contact Form Submitted - Name: ${name}, Email: ${email}, Phone: ${phone}, Time: ${time}`);
+    res.redirect('/success'); // Redirecting after submission
+});
 
-    res.redirect('/'); // Redirecting after submission, adjust as needed
+// GET request to display success message
+router.get('/success', (req, res, next) => {
+    res.send('<h1>Form Successfully Filled</h1><p>Thank you for booking a call. Our representative will contact you shortly.</p><a href="/">Return to Home</a>');
 });
 
 module.exports = router;
